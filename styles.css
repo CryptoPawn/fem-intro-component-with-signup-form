@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    font-size: var(--fs-1);
+}
+
+
+:root {
+    /* Colors */
+    --cPrimary-red: hsl(0, 100%, 74%) ;
+    --cPrimary-green: hsl(154, 59%, 51%);
+    --cSecondary-darkerGreen: hsl(154, 59%, 45%);
+    --cAccent-blue: hsl(248, 32%, 49%);
+    --cNeutral-dark: hsl(249, 10%, 26%);
+    --cTransparent-dark: hsla(249, 10%, 26%, 25%);
+    --cNeutral-light: hsl(246, 25%, 77%);
+    
+
+    /* Font weights */
+    --fw-regular: 400;
+    --fw-medium: 500;
+    --fw-semiBold: 600;
+    --fw-bold: 700;
+
+    /* Drop shadows */
+    --ds-blackNoblur: drop-shadow(0px 10px 0px var(--cTransparent-dark));
+    --ds-greenNoblur: drop-shadow(0px 5px 0px var(--cSecondary-darkerGreen));
+
+    /* Font sizes */
+    --fs-0: 0.800rem;
+    --fs-1: 1.000rem;
+    --fs-2: 1.250rem;
+    --fs-3: 1.563rem;
+    --fs-4: 1.953rem;
+    --fs-5: 3.052rem;
+}
+
+
+
+/*  STATES  */
+form .button:hover {
+    opacity: 50%;
+}
+
+input:focus {
+    outline: 0;
+    border: 1px solid var(--cNeutral-dark);
+}
+
+.error {
+    background: url(images/icon-error.svg) no-repeat;
+    background-position: 95% 50%;
+    border: 2px solid var(--cPrimary-red)!important;
+    color: var(--cPrimary-red);
+} .error::placeholder { color: transparent; }
+
+input + p { /* error text for inputs */
+    display: none;
+    margin-top: 0.5rem;
+    text-align: right;
+    font-style: italic;
+    font-size: var(--fs-0);
+    font-weight: var(--fw-medium);
+    color: var(--cPrimary-red);
+}
+/*///////////////////////////////////////////////////////////////////////////*/
+
+
+
+/*  STRUCTURE */
+html, body { height: 100vh; }
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--cPrimary-red) url(images/bg-intro-desktop.png);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    margin: auto 5vw;
+    max-width: 520px;
+    text-align: center;
+}
+
+
+/*  MAIN CONTENT  */
+header {
+    margin: 5vh 0;
+}
+
+
+
+.free-trail-container {
+    width: 100%;
+    background: var(--cAccent-blue);
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    filter: var(--ds-blackNoblur);
+} .free-trail-container h2 { padding: 20px 80px; }
+
+
+
+.form-container {
+    width: 100%;
+    padding: 1.8rem;
+    background: white;
+    border-radius: 10px;
+    filter: var(--ds-blackNoblur)
+}
+
+form > * { margin-bottom: 1.2rem; }
+
+form input {
+    width: 100%;
+    border: 1px solid var(--cNeutral-light);
+    border-radius: 5px;
+    padding: 1rem;
+}
+
+form .button {
+    border: 0;
+    background: var(--cPrimary-green);
+    filter: var(--ds-greenNoblur);
+    cursor: pointer;
+}
+/*///////////////////////////////////////////////////////////////////////////*/
+
+
+
+/*  TYPOGRAPHY  */
+.semi-bold { font-weight: var(--fw-semiBold); }
+
+
+header h1 {
+    font-size: var(--fs-4);
+    font-weight: var(--fw-semiBold);
+    color: white;
+}
+
+header p {
+    color: white;
+    line-height: 1.8rem;
+}
+
+
+.free-trail-container h2 {
+    font-weight: var(--fw-regular);
+    color: white;
+}
+
+
+form > * {
+    color: var(--cNeutral-dark);
+    font-weight: var(--fw-semiBold);
+}
+
+form input {
+    font-weight: var(--fw-semiBold);
+}
+
+form .button {
+    font-weight: var(--fw-medium);
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+}
+
+
+.form-container .tos,
+.form-container .tos-link {
+    font-size: var(--fs-0);
+}
+
+.form-container .tos {
+    font-weight: var(--fw-medium);
+    color: var(--cNeutral-light);
+}
+
+.form-container .tos-link {
+    font-weight: var(--fw-bold);
+    color: var(--cPrimary-red);
+    cursor: pointer;
+}
+/*///////////////////////////////////////////////////////////////////////////*/
+
+
+
+@media (min-width: 1120px) {
+
+    main {
+        flex-direction: row;
+        text-align: left;
+        align-items: center;
+        justify-content: center;
+        max-width: 1100px;
+    }
+
+    .signup-group {
+        min-width: 520px;
+    }
+
+    header {
+        margin-right: 4rem;
+    }
+
+    .free-trail-container, .tos { text-align: center; }
+
+    header h1 {
+        font-size: var(--fs-5);
+        font-weight: var(--fw-bold);
+        line-height: 3.6rem;
+        margin-bottom: 1rem;
+    }
+}
